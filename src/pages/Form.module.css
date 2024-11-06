@@ -21,8 +21,8 @@
 }
 
 .form:hover {
-    transition: scale(1.05);
-    border: 1px solid black;
+    transition: scale(1.5);
+    border: 2px solid #000;
 }
 
 #heading {

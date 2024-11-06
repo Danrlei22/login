@@ -1,42 +1,58 @@
 import { RiLockPasswordFill } from "react-icons/ri";
+import { IoPersonSharp } from "react-icons/io5";
 import { MdEmail } from "react-icons/md";
+
 import { useState } from "react";
 
 import Styles from "./Form.module.css";
 
-function Login() {
+function Register() {
+const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleLogin = async (e) => {
+  const handleRegister = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await fetch('/api/login', {
+      const response = await fetch('/api/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ username, email, password }),
         });
 
         const data = await response.json();
         if(response.ok) {
-          alert("Login successful");
+          alert(data.message);
         }else {
           alert(data.error);
         }
     } catch (error) {
       console.error('Error:', error);
-      alert('failed to login');
+      alert('Failed to Register user');
     }
   };
 
 
   return (
     <div className={Styles.wrapper}>
-      <form className={Styles.form} onSubmit={handleLogin}>
-        <p id={Styles.heading}>Login</p>
+      <form className={Styles.form} onSubmit={handleRegister}>
+        <p id={Styles.heading}>Register</p>
+        
+        <div className={Styles.field}>
+          <IoPersonSharp />
+          <input
+            autoComplete="off"
+            type="text"
+            placeholder="Username"
+            className={Styles.inputField}
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+        </div>
+        
         <div className={Styles.field}>
           <MdEmail />
           <input
@@ -59,16 +75,11 @@ function Login() {
           />
         </div>
         <div className={Styles.btn}>
-          <button className={Styles.button1} type="submit">Login</button>
-          <button className={Styles.button2} type="submit" onClick={() => window.location.href = '/register'}>Sign Up</button>
+          <button className={Styles.button2} type="submit">Register</button>
         </div>
-
-        <button className={Styles.button3}>
-          <p>Forgot Password</p>
-        </button>
       </form>
     </div>
   );
 }
 
-export default Login;
+export default Register;
