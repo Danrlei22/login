@@ -12,7 +12,7 @@ function Login() {
     e.preventDefault();
 
     try {
-      const response = await fetch('/api/login', {
+      const response = await fetch('http://localhost:5000/api/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -45,6 +45,7 @@ function Login() {
             className={Styles.inputField}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            required
           />
         </div>
         <div className={Styles.field}>
@@ -56,6 +57,7 @@ function Login() {
             className={Styles.inputField}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            required
           />
         </div>
         <div className={Styles.btn}>

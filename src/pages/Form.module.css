@@ -6,6 +6,22 @@
     background-color: #000;
 }
 
+.leftArrow{
+    color: #000;
+    width: 80px;
+    height: 40px;
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 1em;
+    padding: 0.2em;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .form {
     display: flex;
     flex-direction: column;
@@ -113,4 +129,14 @@
 .button3:hover {
     background-color: red;
     color: #FFF;
+}
+
+.error {
+    color: red;
+    text-align: center;
+}
+
+.success {
+    color: green;
+    text-align: center;
 }
