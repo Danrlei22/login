@@ -65,8 +65,8 @@ function Login() {
           <button className={Styles.button2} type="submit" onClick={() => window.location.href = '/register'}>Sign Up</button>
         </div>
 
-        <button className={Styles.button3}>
-          <p>Forgot Password</p>
+        <button className={Styles.button3} type="submit" onClick={() => window.location.href = '/reset-password'}>
+          Forgot Password
         </button>
       </form>
     </div>

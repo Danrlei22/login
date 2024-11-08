@@ -37,7 +37,7 @@ function Register() {
           setEmail("");
           setPassword("");
           window.location.href = "/login";
-        }, 5000);
+        }, 2000);
 
       } else {
         setError(data.error);

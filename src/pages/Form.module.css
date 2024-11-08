@@ -140,3 +140,8 @@
     color: green;
     text-align: center;
 }
+
+.message {
+    text-align: center;
+    color: yellow;
+}

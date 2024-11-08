@@ -3,15 +3,6 @@ const bcrypt = require("bcrypt"); //for hashing passwords
 const router = express.Router();
 const User = require("../models/user");
 
-//User model
-/*const UserSchema = new mongoose.Schema({
-    username: { type: String, required: true },
-    email: { type: String, required: true, unique: true },
-    password: { type: String, required: true },
-});
-
-const User = mongoose.model("User", UserSchema);*/
-
 //Register route
 router.post("/register", async (req, res) => {
     const { username, email, password } = req.body;
@@ -60,5 +51,24 @@ router.get("/users", async (req, res) => {
         res.status(500).send({ error: "Error when searching for users" });
     }
 });
+
+//Request password reset
+router.post("/reset-password", async (req, res) => {
+    const { email, password } = req.body;
+
+    try {
+        const user = await User.findOne({ email });
+        if (!user) {
+            return res.status(400).send({ error: "User not found" });
+        }
+
+        user.password = password;
+        await user.save();
+
+        res.send({ message: "Password reset successful" });
+    } catch (error) {
+        res.status(500).send({ error: "Failed to reset password" });
+    }
+});        
 
 module.exports = router;
