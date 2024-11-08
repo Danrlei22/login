@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/login/static/css/main.d43cfef9.css",
-    "main.js": "/login/static/js/main.fb5fa46b.js",
-    "index.html": "/login/index.html",
-    "main.d43cfef9.css.map": "/login/static/css/main.d43cfef9.css.map",
-    "main.fb5fa46b.js.map": "/login/static/js/main.fb5fa46b.js.map"
+    "main.css": "https://danrlei22.github.io/login/static/css/main.d43cfef9.css",
+    "main.js": "https://danrlei22.github.io/login/static/js/main.fb5fa46b.js",
+    "index.html": "https://danrlei22.github.io/login/index.html",
+    "main.d43cfef9.css.map": "https://danrlei22.github.io/login/static/css/main.d43cfef9.css.map",
+    "main.fb5fa46b.js.map": "https://danrlei22.github.io/login/static/js/main.fb5fa46b.js.map"
   },
   "entrypoints": [
     "static/css/main.d43cfef9.css",
