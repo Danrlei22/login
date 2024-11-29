@@ -10,6 +10,8 @@ import ResetPassword from './pages/ResetPassword';
 
 /* 
 ************ROTAS DO SITE***********
+Iniciar o projeto no terminal: npm start
+Inciar back-end no terminal: node server.js
 
 http://localhost:3000/login - Front-end Login page
 
